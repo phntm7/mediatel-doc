@@ -1,0 +1,18 @@
+export enum State {
+  STATE_PAUSE_LIST = 'STATE_PAUSE_LIST',
+  STATE_PREDICTIVE = 'STATE_PREDICTIVE',
+  STATE_CRT_DETAILS = 'STATE_CRT_DETAILS',
+  STATE_LOGOUT = 'STATE_LOGOUT', // Client is connected but not logged in
+  STATE_MUTE = 'STATE_MUTE',
+  STATE_IDLE = 'STATE_IDLE', // User is logged in and ready to take or make a new call
+  STATE_PAUSE = 'STATE_PAUSE', // User has set a pause
+  STATE_DIALPAD = 'STATE_DIALPAD',
+  STATE_MAKECALL_REQUEST = 'STATE_MAKECALL_REQUEST', // Call was initialized
+  STATE_MAKECALL_FAILED = 'STATE_MAKECALL_FAILED', // Call failed
+  STATE_HOLD_MAKECALL_FAILED = 'STATE_HOLD_MAKECALL_FAILED',
+  STATE_HOLD = 'STATE_HOLD', // Call is on hold
+  STATE_HOLD_MAKECALL_PROGRESS = 'STATE_HOLD_MAKECALL_PROGRESS',
+  STATE_CALL_ACTIVE = 'STATE_CALL_ACTIVE', // Call is in progress
+  STATE_CLERICAL = 'STATE_CLERICAL', // Call has finished and you can set call code now
+  STATE_CALL_DELIVERED = 'STATE_CALL_DELIVERED', // Call has started
+}
