@@ -1,7 +1,7 @@
 ### Интеграция с Mediatel
 
 - Для подключения к SIP телефонии через WebRTC мы используем библиотеку [JsSIP](https://github.com/versatica/JsSIP).
-- Для подключения к Mediatel сервису мы используем библиотеку (Socket.IO)[https://github.com/socketio/socket.io-client] 
+- Для подключения к Mediatel сервису мы используем библиотеку [Socket.IO](https://github.com/socketio/socket.io-client)
 
 ### Пример подключения к Mediatel
 *Пример кода находится в src/mediatelConnection.ts*
