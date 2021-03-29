@@ -1,0 +1,31 @@
+title Mediatel Call Sequence
+
+Frontend->Mediatel: Create Socket.IO connection
+Frontend->Asterisk SIP: Create WebSocket connection
+
+Frontend->Asterisk SIP: login(webrtcSocketUrl, realm, login, password)
+
+Frontend->Mediatel: login(username, password, systemId)
+Mediatel->Mediatel: data.state = STATE_IDLE
+Mediatel-->Frontend: data
+
+Frontend->Mediatel: call(phoneNumber, queueName)
+Mediatel->Mediatel: data.state = STATE_MAKECALL_REQUEST
+Mediatel-->Frontend: data
+Mediatel->Mediatel: data.state = STATE_CALL_DELIVERED
+Mediatel-->Frontend: data
+Asterisk SIP->Frontend: Incoming call request
+Frontend->Asterisk SIP: answer()
+Asterisk SIP-->Frontend: Voice Data
+Mediatel->Mediatel: data.state = STATE_CALL_ACTIVE
+Mediatel-->Frontend: data
+
+Frontend->Mediatel: endCall()
+Mediatel->Mediatel: data.state = STATE_CLERICAL
+Mediatel-->Frontend: data
+
+Asterisk SIP->Frontend: hangup
+
+Frontend->Mediatel: setResult(callCode)
+Mediatel->Mediatel: data.state = STATE_IDLE
+Mediatel-->Frontend: data
