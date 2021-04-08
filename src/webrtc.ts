@@ -59,9 +59,12 @@ export class WebRTC {
 
       this.phoneNumber = session.remote_identity;
 
-      session.on('addstream', (e) => {
+      // Only one of the events below works
+      session.on('addstream', (event) => {
         // Audio stream
-        console.log(e.stream);
+        console.log(event.stream);
+        remoteAudio.srcObject = event.stream
+        remoteAudio.play()
       });
       
       session.on('peerconnection', (data) => {
