@@ -63,6 +63,15 @@ export class WebRTC {
         // Audio stream
         console.log(e.stream);
       });
+      
+      session.on('peerconnection', (data) => {
+        data.peerconnection.onaddstream = (event) => {
+          console.log('session onaddstream')
+          // remoteAudio is an <audio> element
+          remoteAudio.srcObject = event.stream
+          remoteAudio.play()
+        }
+      })
 
       this.session = session;
     });
