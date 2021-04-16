@@ -9,7 +9,7 @@ export interface MediatelData {
   agentName: string; // mediatel login
   ani: string; // phone number
   availableCommand: Command[];
-  awaliableCallCodes: CallCode[];
+  availableCallCodes: CallCode[];
   callCustomerID: string;
   callErrorID: string; // -223
   callErrorText: string; // No Answer from agent
@@ -22,7 +22,7 @@ export interface MediatelData {
   dnis: string;
   holdQueue?: string;
   host: string; // MTAgentFarm-CEUA-110-0-01
-  isAvaliable: boolean;
+  isAvailable: boolean;
   loginAttempt: number;
   loginErrorID?: string;
   loginErrorText?: string;
