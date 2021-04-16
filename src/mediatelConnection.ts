@@ -9,6 +9,8 @@ export class MediatelConnection {
 
   constructor(serverUrl) {
     this.client = io(serverUrl, {
+      path: "/mediatel/socket.io",
+      withCredentials: true,
       transports: ['websocket'],
       multiplex: false,
     });
