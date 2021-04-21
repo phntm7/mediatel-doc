@@ -1,0 +1,9 @@
+API для получения записи разговоров с Mediatel для HES по CalltraceID:
+
+1. https://hes-webrtc.creditkasa.ua/records/mediatel-record?calltraceID=$CALLTRACEID - отдает аудио-поток записи, $CALLTRACEID - значение, которое нужно передать. 
+
+Например, https://hes-webrtc.creditkasa.ua/records/mediatel-record?calltraceID=141
+
+2. https://hes-webrtc.creditkasa.ua/records/mediatel-record?calltraceID=$CALLTRACEID&download=1 - отдает файл аудиозаписи в формате WAV:
+
+Например, https://hes-webrtc.creditkasa.ua/records/mediatel-record?calltraceID=141&download=1
