@@ -69,6 +69,53 @@ export class MediatelConnection {
     });
   }
 
+  /**
+   * Set pause from "pauseList". To disable pause, send id=0
+   * @param id
+   */
+  pause(id) {
+    this.client.emit('data', {
+      type: 'pause',
+      id,
+    });
+  }
+
+  /**
+   * Toggles "predictive" state. Turns on if it's off and vice versa
+   */
+  togglePredictive(): void {
+    this.client.emit('data', {
+      type: 'predictive',
+    });
+  }
+
+  /**
+   * Puts call on hold
+   */
+  holdCall() {
+    this.client.emit('data', {
+      type: 'holdCall',
+    });
+  }
+
+  /**
+   * Resumes call
+   */
+  endHoldCall() {
+    this.client.emit('data', {
+      type: 'retrieveCall',
+    });
+  }
+
+  /**
+   * Restarts mediatel agent. Use this method if agents stops responding to messages
+   */
+  exit() {
+    this.client.emit('data', {
+      type: 'exit',
+    });
+  }
+
   setResult(id: number) {
     this.client.emit('data', {
       type: 'resolutionSet',
