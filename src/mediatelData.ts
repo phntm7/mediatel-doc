@@ -5,7 +5,7 @@ import { Status } from './status';
 
 export interface MediatelData {
   agentExt: string; // mediatel extension
-  agentId: string; // mediatel id
+  agentId: number; // mediatel id
   agentName: string; // mediatel login
   ani: string; // phone number
   availableCommand: Command[];
@@ -15,7 +15,7 @@ export interface MediatelData {
   callErrorText: string; // No Answer from agent
   callStartTime: string; // 1999-01-01 01:01:01
   callTraceID: string;
-  callType: string;
+  callType: number;
   callWaitDuration: string;
   crmConnectTarget?: string;
   crmConnectType?: string;
@@ -26,12 +26,12 @@ export interface MediatelData {
   loginAttempt: number;
   loginErrorID?: string;
   loginErrorText?: string;
-  maxCallDuration: string;
-  mcc?: string;
-  mute?: boolean;
-  pauseId: string;
-  pauseList: Array<Array<[string, string]>>;
-  predictiveStatus: string;
+  maxCallDuration: number;
+  mcc?: any;
+  mute?: number;
+  pauseId: number;
+  pauseList: string[][];
+  predictiveStatus: number;
   queueId: string; // Current queue id
   queueName: string; // Current queue name
   queues: string[];
