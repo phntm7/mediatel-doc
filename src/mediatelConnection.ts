@@ -106,6 +106,15 @@ export class MediatelConnection {
       type: 'retrieveCall',
     });
   }
+  
+  /**
+   * Mute call
+   */
+  muteCall() {
+    this.client.emit('data', {
+      type: 'muteCall',
+    });
+  }
 
   /**
    * Restarts mediatel agent. Use this method if agents stops responding to messages
